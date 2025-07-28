@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SphereOfTech Design System - AI-themed LMS Platform
+All colors MUST be HSL. Based on Sky Blue #3B82F6, Dark Gray #1F2937, Accent Yellow #F59E0B
+*/
+
+@layer base {
+  :root {
+    /* Core AI Brand Colors */
+    --sphere-blue: 217 91% 60%;      /* Sky Blue #3B82F6 */
+    --sphere-dark: 220 39% 18%;      /* Dark Gray #1F2937 */
+    --sphere-yellow: 38 95% 50%;     /* Accent Yellow #F59E0B */
+    
+    /* Semantic tokens for light theme */
+    --background: 0 0% 98%;
+    --foreground: 220 39% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 39% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 39% 18%;
+
+    --primary: 217 91% 60%;           /* Sphere Blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 39% 95%;
+    --secondary-foreground: 220 39% 18%;
+
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 38 95% 50%;             /* Sphere Yellow */
+    --accent-foreground: 220 39% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    /* AI-themed gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-ai: linear-gradient(135deg, hsl(217 91% 60%), hsl(260 100% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 95% 50%), hsl(45 100% 60%));
+    --gradient-glass: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(217 91% 60% / 0.05));
+
+    /* Glass morphism effects */
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(220 13% 91% / 0.3);
+    
+    /* Shadows for depth */
+    --shadow-ai: 0 8px 32px hsl(217 91% 60% / 0.15);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for SphereOfTech */
+    --background: 220 39% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 39% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 39% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 39% 8%;
+
+    --secondary: 220 39% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 39% 15%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 38 95% 55%;
+    --accent-foreground: 220 39% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 220 39% 20%;
+    --input: 220 39% 20%;
+    --ring: 217 91% 65%;
+
+    /* Dark theme gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(217 91% 75%));
+    --gradient-ai: linear-gradient(135deg, hsl(217 91% 65%), hsl(260 100% 75%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 95% 55%), hsl(45 100% 65%));
+    --gradient-glass: linear-gradient(135deg, hsl(217 91% 65% / 0.15), hsl(217 91% 65% / 0.05));
+
+    /* Dark glass morphism */
+    --glass-bg: hsl(220 39% 12% / 0.8);
+    --glass-border: hsl(220 39% 20% / 0.3);
+
+    --sidebar-background: 220 39% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 217 91% 65%;
+    --sidebar-primary-foreground: 220 39% 8%;
+    --sidebar-accent: 220 39% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 39% 20%;
+    --sidebar-ring: 217 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-tomorrow;
+  }
+  
+  /* AI-themed utility classes */
+  .glass-card {
+    @apply bg-[var(--glass-bg)] backdrop-blur-lg border border-[var(--glass-border)] shadow-[var(--shadow-glass)];
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-ai {
+    background: var(--gradient-ai);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-glass {
+    background: var(--gradient-glass);
+  }
+  
+  .shadow-ai {
+    box-shadow: var(--shadow-ai);
+  }
+  
+  /* AI pulse animation */
+  .ai-pulse {
+    animation: ai-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes ai-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Floating animation for AI elements */
+  .ai-float {
+    animation: ai-float 3s ease-in-out infinite;
+  }
+  
+  @keyframes ai-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
